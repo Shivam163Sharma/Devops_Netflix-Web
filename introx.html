@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scroll bars */
+        }
+
+        video {
+            width: 100%;
+            height: 695px;
+            object-fit: cover; /* Ensure the video covers the entire screen */
+        }
+
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+    <title>Netflix</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+
+
+    <video id="introVideo" autoplay muted onended="redirectToNextPage()">
+        <source src="./Assets/Videos/netflix-intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        const video = document.getElementById('introVideo');
+        video.addEventListener('ended', () => {
+          window.location.href = "index.html"; // Replace with your actual URL
+        });
+      </script>
+
+</body>
+</html>
